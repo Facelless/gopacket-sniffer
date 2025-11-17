@@ -61,5 +61,3 @@ sudo ./sniffer "tcp or udp"   # Capture TCP and UDP packets
 ```
 
 
-## Output
-![Uploading](https://i.postimg.cc/NffKmQCN/image.png)
