@@ -30,7 +30,7 @@ A **network packet sniffer** built in Go, inspired by Wireshark, that captures, 
 2. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/gopacket-sniffer.git
+git clone https://github.com/Facelless/gopacket-sniffer.git
 cd gopacket-sniffer
 ```
 
