@@ -59,3 +59,5 @@ sudo ./sniffer "icmp"         # Only ICMP packets
 sudo ./sniffer "tcp port 80"  # Only HTTP traffic
 sudo ./sniffer "tcp or udp"   # Capture TCP and UDP packets
 ```
+
+![Uploading](https://i.postimg.cc/NffKmQCN/image.png)
