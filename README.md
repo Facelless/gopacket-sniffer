@@ -1,4 +1,4 @@
-# Mini Wireshark in Go 🐹🔍
+# Mini Wireshark in Go
 
 ![Go](https://img.shields.io/badge/Go-1.20%2B-blue?logo=go&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
