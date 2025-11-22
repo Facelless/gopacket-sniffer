@@ -7,6 +7,7 @@ import (
 	"os"
 	"strings"
 	"time"
+	"wireshark/cmd/client"
 
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/layers"
@@ -15,16 +16,25 @@ import (
 )
 
 func chooseInterface() string {
-	devices, err := pcap.FindAllDevs()
-	if err != nil {
-		log.Fatal(err)
+	out := client.Output{}
+	resultOut := out.DeviceListOptions()
+
+	if resultOut.Is {
+		return ""
 	}
-	for _, d := range devices {
-		if len(d.Addresses) > 0 && !strings.Contains(d.Name, "lo") {
-			return d.Name
-		}
+
+	cli := client.Input{}
+	prompt := cli.GetOptionOfPrompt("Escolha qual driver será sniffado: ")
+
+	devices, ok := resultOut.Body["devices"].([]pcap.Interface)
+
+	if !ok {
+		return ""
 	}
-	return ""
+
+	optionDevice := devices[prompt].Name
+
+	return optionDevice
 }
 
 func formatTCPFlags(tcp *layers.TCP) string {
